@@ -17,4 +17,4 @@ Ghidra annotated Graph_View:
 
 Ghidra annotated Listing_View and Bookmarks:
 
-![Ghidra annotated_Listing_bookmark_view]("/Images/GHIDRA_listing view_bookmarks_annotated.PNG")
+![Ghidra annotated_Listing_bookmark_view](/Images/GHIDRA_listing%20view_bookmarks_annotated.PNG)
