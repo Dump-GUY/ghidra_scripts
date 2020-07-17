@@ -10,4 +10,9 @@ Tiny Tracer repo: https://github.com/hasherezade/tiny_tracer
 
 Run script via Ghidra Script Manager, import relevant .tag file for analyzed sample, produced by Tiny Tracer.
 
+Ghidra annotated Graph_View:
 ![Ghidra annotated Graph view](/Images/GHIDRA_GRAPHVIEW_annotated.PNG)
+
+
+Ghidra annotated Listing_View and Bookmarks:
+![Ghidra annotated_Listing_bookmark_view](/Images/GHIDRA_listing view_bookmarks_annotated.PNG)
