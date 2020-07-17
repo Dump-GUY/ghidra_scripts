@@ -16,10 +16,10 @@ def add_bookmark_comment(addr, apicall):
 f = askFile("Give me a .tag file to import!", "Import")
 
 for line in file(f.absolutePath):
-    fields = line.split(";")
-    RVA = fields[0]
-    ApiCall= fields[1].replace('\n', '')
-    addr_int = int(RVA, 16)
-    addr = currentProgram.minAddress.add(addr_int)
-    add_bookmark_comment(addr,ApiCall)
-
+    if line[0] != '>':
+    	fields = line.split(";")
+    	RVA = fields[0]
+    	ApiCall= fields[1].replace('\n', '')
+    	addr_int = int(RVA, 16)
+    	addr = currentProgram.minAddress.add(addr_int)
+    	add_bookmark_comment(addr,ApiCall)
