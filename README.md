@@ -10,3 +10,4 @@ This script will annotate and bookmark the code with tags produced by tool Tiny 
 Tiny Tracer repo: https://github.com/hasherezade/tiny_tracer
 
 Run script via Ghidra Script Manager, import relevant .tag file for analyzed sample, produced by Tiny Tracer.
+
