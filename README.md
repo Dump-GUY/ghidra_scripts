@@ -1,5 +1,6 @@
 # ghidra_scripts
 Scripts for the Ghidra software reverse engineering suite.
+For developing python scripts in context of Ghidra SRE please visit WIKI.
 
 ## Installation
 Insert script to Ghidra script directory. Example:$USER_HOME/ghidra_scripts.
