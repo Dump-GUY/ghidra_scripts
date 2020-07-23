@@ -31,6 +31,7 @@ If matched capability in CAPA result has scope 'file', no annotation (PRE_COMMEN
 Capa detects capabilities in executable files. You run it against a PE file or shellcode and it tells you what it thinks the program can do.
 For example, it might suggest that the file is a backdoor, is capable of installing services, or relies on HTTP to communicate.
 CAPA repo: https://github.com/fireeye/capa
+CAPA blog post: https://www.fireeye.com/blog/threat-research/2020/07/capa-automatically-identify-malware-capabilities.html
 
 How to use:
 Analyze sample with CAPA.
