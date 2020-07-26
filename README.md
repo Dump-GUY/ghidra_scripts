@@ -48,12 +48,12 @@ If no PRE_COMMENT presented in Decompile window or Graph window --> Check if you
 
 Ghidra annotated Listing view, Decompile view and Bookmarks (1):
 
-![Ghidra annotated Graph view](/Images/CAPA_Importer_All_in_one_view.PNG)
+![Ghidra annotated Listing view](/Images/CAPA_Importer_All_in_one_view.PNG)
 
 
 Ghidra annotated Listing view, Decompile view and Bookmarks (2):
 
-![Ghidra annotated Graph view](/Images/CAPA_Importer_All_in_one_view2.PNG)
+![Ghidra annotated Listing view2](/Images/CAPA_Importer_All_in_one_view2.PNG)
 
 
 
