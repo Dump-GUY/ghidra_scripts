@@ -26,7 +26,7 @@ Ghidra annotated Listing_View and Bookmarks:
 
 
 ## CAPA_Importer.py
-This script works with exported results of CAPA tool.<br/>
+This script works with exported .txt or .json results of CAPA tool.<br/>
 Capa detects capabilities in executable files. You run it against a PE file or shellcode and it tells you what it thinks the program can do.<br/>
 For example, it might suggest that the file is a backdoor, is capable of installing services, or relies on HTTP to communicate.<br/>
 CAPA repo: https://github.com/fireeye/capa<br/>
@@ -40,9 +40,11 @@ Tested on CAPA version 1.0.0<br/>
 
 How to use:<br/>
 Analyze sample with CAPA.<br/>
-Example: CAPA -v malware.exe > exported.txt<br/>
-Parameter '-v' must be presented in cmdline argument.<br/>
-Run script via Ghidra Script Manager, import exported.txt and it will annotate (with PRE_COMMENT) and bookmark the code with Capability, Matched RVA location and Scope.
+Example1: CAPA -v malware.exe > exported.txt<br/>
+Example2: CAPA -j malware.exe > exported.json<br/>
+Parameter '-v' must be presented in cmdline argument to export Capa results in supported text format.<br/>
+Parameter '-j' must be presented in cmdline argument to export Capa results in supported json format.<br/>
+Run this script, import exported.txt or exported.json and it will annotate (with PRE_COMMENT) and bookmark the code with Capability, Matched RVA location and Scope.
 <br/>
 If no PRE_COMMENT presented in Decompile window or Graph window --> Check if you have in relevant windows option "Display PRE comments" enabled.
 
