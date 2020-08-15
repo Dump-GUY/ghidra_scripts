@@ -35,7 +35,7 @@ CAPA blog post: https://www.fireeye.com/blog/threat-research/2020/07/capa-automa
 Script "CAPA_Importer.py" will annotate (PRE_COMMENT) code with Capability, bookmark the code with Capability, Matched RVA location and Scope. If more than one Capability for relevant RVA is presented, script will add annotation for the capability to RVA in code and <br/>
 also edit bookmark so the bookmark with location (RVA) will contain all Capabilities.<br/>
 If matched capability in CAPA result has scope 'file', no annotation (PRE_COMMENT) will be presented in code, bookmark will be created with RVA = ImageBase.<br/>
-Tested on CAPA version 1.0.0<br/>
+Tested on CAPA version 1.0.0, 1.1.0<br/>
 <br/>
 
 How to use:<br/>
