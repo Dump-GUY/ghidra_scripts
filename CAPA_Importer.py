@@ -19,18 +19,37 @@ import json
 
 def Parse_json(data):
     Capabilities = list(data['rules'].keys())
-    for i in range (0,len(Capabilities)):    
-        Current_capability = Capabilities[i]
-        Current_scope = data['rules'][Capabilities[i]]['meta']['scope']
-        Matches_list = list(data['rules'][Capabilities[i]]['matches'].keys())
-        if 'lib' in data['rules'][Capabilities[i]]['meta'].keys() and data['rules'][Capabilities[i]]['meta']['lib'] == True:
-            pass
-        else:
-            if Current_scope == 'file':
-                add_bookmark_comment(Current_scope,Current_capability,int(0))
-            else:
-                for j in range (0,len(Matches_list)):
-                    add_bookmark_comment(Current_scope,Current_capability,int(Matches_list[j]))
+    for i in range (0,len(Capabilities)): 
+        try:   
+            Current_capability = Capabilities[i]
+            Current_scope = data['rules'][Capabilities[i]]['meta']['scope']
+            type = data['rules'][Capabilities[i]]['matches'][0][0]['type']
+            if type == "absolute":
+                if 'lib' in data['rules'][Capabilities[i]]['meta'].keys() and data['rules'][Capabilities[i]]['meta']['lib'] == True:
+                    pass
+                else:
+                    if Current_scope == 'file':
+                        add_bookmark_comment(Current_scope,Current_capability,int(0))
+                    else:
+                        Matches_list_main = data['rules'][Capabilities[i]]['matches'][0][0]['value']
+                        add_bookmark_comment(Current_scope,Current_capability,int(Matches_list_main))
+                                
+                     
+                    Match_list_len = len(data['rules'][Capabilities[i]]['matches'][0][1]['children'])
+                    for j in range(0,Match_list_len):
+                        match_list_children = data['rules'][Capabilities[i]]['matches'][0][1]['children']
+                        if match_list_children[j]['success'] == True:
+                            location_len = len(match_list_children[j]['locations'])
+                            if location_len > 0:
+                                for k in range(0,location_len):
+                                    if match_list_children[j]['locations'][k]['type'] == 'absolute':
+                                       address = match_list_children[j]['locations'][k]['value']
+                                       add_bookmark_comment(Current_scope,Current_capability,int(address))
+                                            
+        except AttributeError:
+             print("Skipping this Capability Due to AttributeError"+Current_capability)
+             pass                      
+            
 
 def add_bookmark_comment(scope,capability,RVAaddr):	
 	if RVAaddr == 0:
@@ -85,6 +104,4 @@ if filename.endswith('.json'):
             data = json.load(f)		
             Parse_json(data)
 else:
-    print 'No .json or .txt file !!!'
-
-
+    print("No .json or .txt file !!!")
